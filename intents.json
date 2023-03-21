@@ -1,84 +1,71 @@
 {
   "intents": [
-    {
-      "tag": "greeting",
-      "patterns": [
-        "Hi",
-        "Hey",
-        "How are you",
-        "Is anyone there?",
-        "Hello",
-        "Good day"
-      ],
-      "responses": [
-        "Hey :-)",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
-      "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
-      "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
-      ]
-    },
-    {
-      "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
-    },
-    {
-      "tag": "items",
-      "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
-      ],
-      "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
-      ]
-    },
-    {
-      "tag": "payments",
-      "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
-      ],
-      "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
-      ]
-    },
-    {
-      "tag": "delivery",
-      "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
-      ],
-      "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
-      ]
-    },
-    {
-      "tag": "funny",
-      "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
-      ],
-      "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
-      ]
-    }
+      {
+          "tag": "greeting",
+          "patterns": [
+              "Hi",
+              "Hey",
+              "How are you",
+              "Is anyone there?",
+              "Hello",
+              "Good day"
+          ],
+          "responses": [
+              "Hello, thanks for visiting IT Services",
+              "Welcome to IT Services, how can I help you?",
+              "IT Services is at your service, how can I help you?"
+          ]
+      },
+      {
+          "tag": "eduroam",
+          "patterns": [
+              "Can you help me connect to eduroam?",
+              "How do I connect to eduroam?",
+              "I can't connect to eduroam",
+              "I can't connect to eduroam, can you help me?",
+              "I can't connect to eduroam, what should I do?",
+              "I need help with eduroam",
+              "My eduroam is not working",
+              "Please help me with my eduroam"
+          ],
+          "responses": [
+              "Don't worry, I can help you with that. Please follow the instruction on this page: https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3",
+              "I can help you with that. Please follow the instruction on this page: https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3"
+          ]
+      },
+      {
+          "tag": "blackboard",
+          "patterns": [
+              "I can't log into blackboard",
+              "I can't log into blackboard, can you help me?",
+              "My blackboard isn't working",
+              "I'm unable to use blackboard",
+              "I'm having trouble with blackboard",
+              "My blackboard won't work",
+              "I can't access blackboard",
+              "My blackboard is showing the wrong course",
+              "My blackboard is showing the wrong modules"
+          ],
+          "responses": [
+              "Don't worry, I can help you with that. Please look at the following page: https://info.uwe.ac.uk/online/blackboard/students/default.asp",
+              "I can help you with that. Please look at the following page: https://info.uwe.ac.uk/online/blackboard/students/default.asp"
+          ]
+      },
+      {
+          "tag": "unhelpful",
+          "patterns": [
+              "That didn't help",
+              "That didn't solve my problem",
+              "I have a different problem",
+              "I have a different issue",
+              "I was unable to solve the problem",
+              "I was unable to solve the issue",
+              "I still have a problem",
+              "I still have an issue"
+          ],
+          "responses": [
+              "I'm sorry to hear that. Please contact IT Services for further assistance."
+          ]
+      }
   ]
 }
