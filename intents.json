@@ -29,9 +29,157 @@
               "Please help me with my eduroam"
           ],
           "responses": [
-              "Don't worry, I can help you with that. Please follow the instruction on this page: https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3",
-              "I can help you with that. Please follow the instruction on this page: https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3"
-          ]
+              "Don't worry, I can help you with that. Please follow the instructions on this page <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>",
+              "I can help you with that. Please follow the instructions on this page <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>"
+          ]     
+      },
+      {
+        "tag": "eduroam iOS",
+        "patterns": [
+            "How do I use eduroam on my iphone?",
+            "How do I use eduroam on my ipad?",
+            "How do I use eduroam on my ios device?",
+            "How do I use eduroam on my apple device?",
+            "How do I use eduroam on my apple phone?",
+            "How do I connect to eduroam on iOS?",
+            "I can't connect to eduroam on my iPhone"
+        ],
+        "responses": [
+            "1. Go to Settings. <br> 2. Select Wifi. <br>3. Select eduroam. <br>4. Enter your UWE Bristol username followed by '@uwe.ac.uk' (for example, an2-other@uwe.ac.uk).<br>5. Enter your UWE Bristol password.<br>6. Select Join.<br>7. Select Done.<br>That's it! You are now connected to eduroam.<br><br>If you are still experiencing issues follow the troubleshooting tips <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>"
+        ]     
+      },
+      {
+        "tag": "eduroam Android",
+        "patterns": [
+            "How do I connect to eduroam on my android phone",
+            "How do I connect to eduroam on my android device",
+            "I can't connect to eduroam on my android phone",
+            "Help me connect my android phone to eduroam",
+            "I can't connect my chromebook to eduroam",
+            "Help connect my chromebook to eduroam",
+            "How do I connect my chromebook to eduroam"
+        ],
+        "responses": [
+            "1. Go to Settings.<br>2. Select Wifi.<br>3. Select eduroam.<br>4. Change settings to the following:<br>EAP method: PEAP<br>Phase 2 authentication: MSCHAPV2 - This can be under the 'Advance' menu.<br>CA certificate: Do not validate - 'Do not specify' on some devices<br>5. Enter your UWE Bristol username followed by '@uwe.ac.uk' (for example, an2-other@uwe.ac.uk).<br>6. Enter your UWE Bristol password.<br>7. Select Connect.<br>8. If your Android device requests a domain enter radius01.uwe.ac.uk.<br><br>That's it! You are now connected to eduroam.<br><br>If you are still experiencing issues follow the troubleshooting tips <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>"
+        ]     
+      },
+      {
+        "tag": "eduroam Windows",
+        "patterns": [
+            "How do I connect to eduroam on a windows PC",
+            "How do I connect to eduroam on my windows laptop",
+            "How do I connect to eduroam on my windows device",
+            "How do I connect to eduroam on my windows computer",
+            "I need to connect eduroam on my windows PC",
+            "I need to connect eduroam on my windows laptop",
+            "Help me connect to eduroam on my windows PC"
+        ],
+        "responses": [
+            "1. Choose eduroam.<br>2. Select Wifi from the taskbar or settings.<br>3. Select eduroam.<br>4. Select Connect.<br>Please note: you may get a message asking you to 'continue connecting?' - if so, select Connect to continue.<br>5. Enter your UWE Bristol username followed by '@uwe.ac.uk' (for example, an2-other@uwe.ac.uk).<br>6. Enter your UWE Bristol password.<br>7. Select OK.<br><br>That's it! You are now connected to eduroam.<br><br>If you are still experiencing issues follow the troubleshooting tips <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>"
+        ]     
+      },
+      {
+        "tag": "eduroam MacOS",
+        "patterns": [
+            "How do I connect to eduroam on my mac",
+            "How do I connect to eduroam on my macbook",
+            "How do I connect to eduroam on my macbook pro",
+            "How do I connect to eduroam on my macbook air",
+            "I need help connecting my macos device to eduroam",
+            "I can't connect my macbook to eduroam",
+            "Help me connect my macbook to eduroam",
+            "I can't connect my macos device to eduroam"
+        ],
+        "responses": [
+            "1. Select Wifi from the taskbar.<br>2. Select eduroam.<br>3. Enter your UWE Bristol username followed by '@uwe.ac.uk' (for example, an2-other@uwe.ac.uk).<br>4. Enter your UWE Bristol password.<br>5. Select Continue to accept the server certificate.<br>6. Save the certificate to your keychain with your own Mac/iCloud username and password.<br><br>That's it! You are now connected to eduroam.<br><br>If you are still experiencing issues follow the troubleshooting tips <a href=\"https://www.uwe.ac.uk/study/it-services/wifi-and-remote-access#section-3\">here</a>"
+        ]     
+      },
+      {
+           "tag": "AppsAnywhere",
+           "patterns": [
+                "I need to install appsanywhere",
+                "How do I install appsanywhere?",
+                "Where can I get appsanywhere on my computer?",
+                "I need help getting appsanywhere on my pc",
+                "How do I launch appsanywhere on my laptop?",
+                "How do I launch appsanywhere?",
+                "I need some help starting up appsanywhere",
+                "Can you help me find appsanywhere?",
+                "I want more infomation about appsanywhere"
+           ],
+           "responses": [
+                "No worries, here is all the information you'll need to install and find out more about AppAnyhwere: <a href=\"https://www.uwe.ac.uk/study/it-services/software/appsanywhere\">here</a>",
+                "No problem, I can assist you. Please proceed to this link and follow the instructions in order to install, launch as well as find more info about AppsAnywhere, <a href=\"https://www.uwe.ac.uk/study/it-services/software/appsanywhere\">here</a>"
+
+           ]
+      },
+      {
+           "tag": "Printing",
+           "patterns": [
+                "How do I print?",
+                "Where do I go to print",
+                "I need help with printing",
+                "I need assisstance with printing something",
+                "I want to print something off",
+                "can you help me print something?"
+           ],
+           "responses": [
+                "Not an issue, in order to find out how print using our 'Printme' service, please follow the step-by-step guide from this link: <a href=\"https://www.uwe.ac.uk/study/it-services/printing#a55b411b1-2bab-48a4-8aa0-90021010aa87\">here</a>",
+                "I'm happy to help, here are the instructions to learn how to print using our 'Printme' services, please feel free to ask any more questions if you get stuck: <a href=\"https://www.uwe.ac.uk/study/it-services/printing#a55b411b1-2bab-48a4-8aa0-90021010aa87\">here</a>"
+           ]
+           
+      },
+      {
+            "tag": "UWE Account (Username & Password)",
+            "patterns": [
+                "I forgot my username",
+                "I forgot my password",
+                "I dont't know what my username is",
+                "I don't know what my password is",
+                "I need helping finding out my username and password",
+                "How do I find out about my username and password",
+                "Where can I find my username and password",
+                "I'm having issues with my UWE login",
+                "I'm having issues with my UWE account"
+            ],
+            "responses": [
+                "I'm on it, okay- please follow the given link in order to find out how to find out your username and password, as well as reset it: <a href=\"https://www.uwe.ac.uk/study/it-services/username-and-password\">here</a>",
+                "I can help you, here is all the information you need to obtain your username and password: <a href=\"https://www.uwe.ac.uk/study/it-services/username-and-password\">here</a>"
+              
+            ]
+
+      },
+      {
+            "tag": "IT Services service catalogue",
+            "patterns": [
+                "What IT services do you provide?",
+                "Give me a list of the IT services UWE has",
+                "I'd like to know all the IT services avaliable to me",
+                "Where can I find out what IT services UWE provides?",
+                "I want to see all the IT services"
+            ],
+            "responses": [
+                "Hi! All the IT services UWE provides as mentioned in the IT services catalogue, here is the link to the catalogue to browse yourself: <a href=\"https://www.uwe.ac.uk/study/it-services/service-catalogue\">here</a>",
+                "No problem! You'll find all the IT services we provide by following this link, feel free to ask any more questions: <a href=\"https://www.uwe.ac.uk/study/it-services/service-catalogue\">here</a>"
+            ]
+
+            
+      },
+      {
+            "tag": "IT Self-Service",
+            "patterns": [
+                "I'd like to do some IT self-service",
+                "Can you forward me to the IT self-service page?",
+                "I want to do some IT self-service",
+                "Is there an IT self-service page?",
+                "I want to do some IT self-service, where do I go?",
+                "Take me to the IT self-service page"
+            ],
+            "responses": [
+                "No problem, here is the link to the IT self-service page: <a href=\"https://uwe.saasiteu.com/Modules/SelfService/?NoDefaultProvider=True#home\">here</a>",
+                "Don't worry, I can help you with that. Please follow this page <a href=\"https://uwe.saasiteu.com/Modules/SelfService/?NoDefaultProvider=True#home\">here</a>"
+            ]
+
       },
       {
           "tag": "blackboard",
@@ -44,13 +192,28 @@
               "My blackboard won't work",
               "I can't access blackboard",
               "My blackboard is showing the wrong course",
-              "My blackboard is showing the wrong modules"
+              "My blackboard is showing the wrong modules",
+              "I'm having problems accessing modules on blackboard",
+              "I'm having problems accessing courses on blackboard",
+              "I'm having problems acccessing content on blackboard",
+              "I'm having problems submitting my assignments",
+              "I'm having problems with my online submissions",
+              "I'm having problems with my blackboard collaborate"
           ],
           "responses": [
-              "Don't worry, I can help you with that. Please look at the following page: https://info.uwe.ac.uk/online/blackboard/students/default.asp",
-              "I can help you with that. Please look at the following page: https://info.uwe.ac.uk/online/blackboard/students/default.asp"
+              "Don't worry, I can help you with that. Please look at the following page <a href=\"https://info.uwe.ac.uk/online/blackboard/students/default.asp\">here</a>",
+              "I can help you with that. Please follow the instructions on the page <a href=\"https://info.uwe.ac.uk/online/blackboard/students/default.asp\">here</a>"
           ]
       },
+      {
+        "tag": "microsoft teams",
+        "patterns": [
+            
+        ],
+        "responses": [
+            
+        ]
+    },
       {
           "tag": "unhelpful",
           "patterns": [
@@ -66,6 +229,22 @@
           "responses": [
               "I'm sorry to hear that. Please contact IT Services for further assistance."
           ]
-      }
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+            "Bye",
+            "See you later",
+            "Goodbye",
+            "Have a nice day",
+            "Have a good day",
+            "Thanks for the help"
+        ],
+        "responses": [
+            "Goodbye!",
+            "See you later!",
+            "Have a nice day!"
+        ]
+    }
   ]
 }
