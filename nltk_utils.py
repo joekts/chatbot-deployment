@@ -1,29 +1,19 @@
+#Importing necessary modules
 import numpy as np
 import nltk
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
 
-
+#Defining a method to tokenize words. Splits a sentence into an array of words (tokens)
 def tokenize(sentence):
-    """
-    split sentence into array of words/tokens
-    a token can be a word or punctuation character, or number
-    """
     return nltk.word_tokenize(sentence)
 
-
+#Defining a method to stem words. First turn the word into all lower case and then finds the root form of the word
 def stem(word):
-    """
-    stemming = find the root form of the word
-    examples:
-    words = ["organize", "organizes", "organizing"]
-    words = [stem(w) for w in words]
-    -> ["organ", "organ", "organ"]
-    """
     return stemmer.stem(word.lower())
 
-
+#Defining a method to create a bag of words. Returns an array of 1s (if a known word exists in the sentence) or 0s (if it doesn't)
 def bag_of_words(tokenized_sentence, words):
     """
     return bag of words array:

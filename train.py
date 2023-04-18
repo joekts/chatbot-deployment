@@ -1,3 +1,4 @@
+#Import all the necessary modules and scripts
 import numpy as np
 import random
 import json
@@ -9,44 +10,57 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
+#Load our intents file
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
+#Initialise our arrays/tuple
 all_words = []
 tags = []
 xy = []
-# loop through each sentence in our intents patterns
+
+#Loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']
-    # add to tag list
+
+    #Add to tag list
     tags.append(tag)
+
     for pattern in intent['patterns']:
-        # tokenize each word in the sentence
+
+        #Tokenize each word in the sentence
         w = tokenize(pattern)
-        # add to our words list
+
+        #Add to our words list
         all_words.extend(w)
-        # add to xy pair
+
+        #Add to our tuple
         xy.append((w, tag))
 
-# stem and lower each word
+#Stem and lower each word
 ignore_words = ['?', '.', '!']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
-# remove duplicates and sort
+
+#Remove duplicates and sort
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
+#Print to console to ensure it's working
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
 print(len(all_words), "unique stemmed words:", all_words)
 
-# create training data
+#Create training arrays
 X_train = []
 y_train = []
+
 for (pattern_sentence, tag) in xy:
-    # X: bag of words for each pattern_sentence
+
+    #X: bag of words for each pattern_sentence
     bag = bag_of_words(pattern_sentence, all_words)
     X_train.append(bag)
-    # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
+
+    #Y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
     label = tags.index(tag)
     y_train.append(label)
 
@@ -62,6 +76,7 @@ hidden_size = 8
 output_size = len(tags)
 print(input_size, output_size)
 
+#Creating a PyTorch dataset
 class ChatDataset(Dataset):
 
     def __init__(self):
@@ -69,11 +84,11 @@ class ChatDataset(Dataset):
         self.x_data = X_train
         self.y_data = y_train
 
-    # support indexing such that dataset[i] can be used to get i-th sample
+    #Support indexing such that dataset[i] can be used to get i-th sample
     def __getitem__(self, index):
         return self.x_data[index], self.y_data[index]
 
-    # we can call len(dataset) to return the size
+    #We can call len(dataset) to return the size
     def __len__(self):
         return self.n_samples
 
@@ -83,37 +98,41 @@ train_loader = DataLoader(dataset=dataset,
                           shuffle=True,
                           num_workers=0)
 
+#Allows the model to use GPU if available
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+#Implementing our neural network created in model.py
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
-# Loss and optimizer
+#Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-# Train the model
+#Train the model
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
         
-        # Forward pass
+        #Forward pass
         outputs = model(words)
         # if y would be one-hot, we must apply
         # labels = torch.max(labels, 1)[1]
         loss = criterion(outputs, labels)
         
-        # Backward and optimize
+        #Backward and optimize
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
+    #Printing loss to console  
     if (epoch+1) % 100 == 0:
         print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
-
+#Printing final loss to console
 print(f'final loss: {loss.item():.4f}')
 
+#Creates the dataset
 data = {
 "model_state": model.state_dict(),
 "input_size": input_size,
@@ -123,6 +142,7 @@ data = {
 "tags": tags
 }
 
+#Creates a file for the data and saves it
 FILE = "data.pth"
 torch.save(data, FILE)
 
